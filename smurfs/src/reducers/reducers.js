@@ -1,4 +1,4 @@
-import { SMURF_SUCCESS, SMURF_FAILURE, SMURF_LOAD } from '../actions'
+import { SMURF_SUCCESS, SMURF_FAILURE, SMURF_LOAD, ADDING_SMURF } from '../actions'
 
 
 const initialState = {
@@ -7,7 +7,7 @@ const initialState = {
     error: null
 }
 
-export function reducer(state =initialState, action){
+export function reducer(state = initialState, action){
     switch(action.type){
       case SMURF_LOAD:
           return {
@@ -28,6 +28,12 @@ export function reducer(state =initialState, action){
                     error: action.payload,
                    isFetching: true
                 }
+              case ADDING_SMURF:
+                  return {
+                      ...state,
+                      smurfs: action.payload.data
+                  }
+             
           default:
               return state
 

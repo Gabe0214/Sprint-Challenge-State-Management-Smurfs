@@ -20,7 +20,7 @@ const SmurfList = props => {
 }
 
 const mapStateToProps = state => ({
-  isFetching: state.isFetching, 
+   
   smurfs: state.smurfs 
 })
 
